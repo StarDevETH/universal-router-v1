@@ -1,0 +1,139 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "permit2",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "weth9",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "v2Factory",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "v3Factory",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "pairInitCodeHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "poolInitCodeHash",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct RouterParameters",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidRouterParameters",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"stateVariables": {
+				"PERMIT2": {
+					"details": "Permit2 address"
+				},
+				"UNISWAP_V2_FACTORY": {
+					"details": "The address of UniswapV2Factory"
+				},
+				"UNISWAP_V2_PAIR_INIT_CODE_HASH": {
+					"details": "The UniswapV2Pair initcodehash"
+				},
+				"UNISWAP_V3_FACTORY": {
+					"details": "The address of UniswapV3Factory"
+				},
+				"UNISWAP_V3_POOL_INIT_CODE_HASH": {
+					"details": "The UniswapV3Pool initcodehash"
+				},
+				"WETH9": {
+					"details": "WETH9 address"
+				}
+			},
+			"title": "Router Immutable Storage (ERC20-only)",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/base/RouterImmutables.sol": "RouterImmutables"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303",
+				"dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV"
+			]
+		},
+		"contracts/base/RouterImmutables.sol": {
+			"keccak256": "0x4589c74a2dc26510fd08829600f05b5dfe66eee31e510d48d8de084ef91d1181",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c30c65e52c73ed8addbdddde3ce7a5949839ba9c2821b2db005e235334b388db",
+				"dweb:/ipfs/QmXYn2yRHcooDao7pMKNoT6ChPg3XLADxtC9ojHZT96uqV"
+			]
+		},
+		"contracts/interfaces/external/IWETH9.sol": {
+			"keccak256": "0xb059e143d7d3864bfc53708d54bb2a35c9115d807de3ed75a6a033be24b33b6c",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://a5b7afc743e6fecbf23563b43482218a6bdd58e3cdd1ef3e36a9d07fd4ff4c26",
+				"dweb:/ipfs/QmTN8CozJtaS8GAgDUMmWnnfc6Er9HRU9X8RSQJx5oZmJT"
+			]
+		},
+		"lib/permit2/src/interfaces/IAllowanceTransfer.sol": {
+			"keccak256": "0x14cf8839107a3b30fbd02e92b1506d8ee25a002b6d1dd37ff2745b2adbaf4f2e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bb1a740ae82ee2f704135927e817780971356b41288e6b044c43ac9e3cb8e97d",
+				"dweb:/ipfs/Qmbi1ZZREFLnNyAfpvPpgRYYdxCTemqTr5krfX6ufVA7D2"
+			]
+		}
+	},
+	"version": 1
+}

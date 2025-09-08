@@ -1,0 +1,598 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "permit2",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "weth9",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "v2Factory",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "v3Factory",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "pairInitCodeHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "poolInitCodeHash",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct RouterParameters",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "BalanceTooLow",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ContractLocked",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ETHNotAccepted",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "commandIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					}
+				],
+				"name": "ExecutionFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FromAddressIsNotOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InsufficientETH",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InsufficientToken",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidBips",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "commandType",
+						"type": "uint256"
+					}
+				],
+				"name": "InvalidCommandType",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidPath",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidReserves",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidRouterParameters",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LengthMismatch",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ReservedBitSet",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "SliceOutOfBounds",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TransactionDeadlinePassed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UnsafeCast",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V2InvalidPath",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V2TooLittleReceived",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V2TooMuchRequested",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V3InvalidAmountOut",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V3InvalidCaller",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V3InvalidSwap",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V3TooLittleReceived",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "V3TooMuchRequested",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "commands",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "inputs",
+						"type": "bytes[]"
+					}
+				],
+				"name": "execute",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "commands",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "inputs",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "execute",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "amount0Delta",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "amount1Delta",
+						"type": "int256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "uniswapV3SwapCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"execute(bytes,bytes[])": {
+					"params": {
+						"commands": "A set of concatenated commands, each 1 byte in length",
+						"inputs": "An array of byte strings containing abi encoded inputs for each command"
+					}
+				},
+				"execute(bytes,bytes[],uint256)": {
+					"params": {
+						"commands": "A set of concatenated commands, each 1 byte in length",
+						"deadline": "The deadline by which the transaction must be executed",
+						"inputs": "An array of byte strings containing abi encoded inputs for each command"
+					}
+				},
+				"uniswapV3SwapCallback(int256,int256,bytes)": {
+					"details": "In the implementation you must pay the pool tokens owed for the swap. The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory. amount0Delta and amount1Delta can both be 0 if no tokens were swapped.",
+					"params": {
+						"amount0Delta": "The amount of token0 that was sent (negative) or must be received (positive) by the pool by the end of the swap. If positive, the callback must send that amount of token0 to the pool.",
+						"amount1Delta": "The amount of token1 that was sent (negative) or must be received (positive) by the pool by the end of the swap. If positive, the callback must send that amount of token1 to the pool.",
+						"data": "Any data passed through by the caller via the IUniswapV3PoolActions#swap call"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"ETHNotAccepted()": [
+					{
+						"notice": "Thrown when attempting to send ETH directly to the contract"
+					}
+				],
+				"ExecutionFailed(uint256,bytes)": [
+					{
+						"notice": "Thrown when a required command has failed"
+					}
+				],
+				"LengthMismatch()": [
+					{
+						"notice": "Thrown when attempting to execute commands and an incorrect number of inputs are provided"
+					}
+				],
+				"TransactionDeadlinePassed()": [
+					{
+						"notice": "Thrown when executing commands with an expired deadline"
+					}
+				],
+				"UnsafeCast()": [
+					{
+						"notice": "Thrown when a valude greater than type(uint160).max is cast to uint160"
+					}
+				]
+			},
+			"kind": "user",
+			"methods": {
+				"execute(bytes,bytes[])": {
+					"notice": "Executes encoded commands along with provided inputs."
+				},
+				"execute(bytes,bytes[],uint256)": {
+					"notice": "Executes encoded commands along with provided inputs. Reverts if deadline has expired."
+				},
+				"uniswapV3SwapCallback(int256,int256,bytes)": {
+					"notice": "Called to `msg.sender` after executing a swap via IUniswapV3Pool#swap."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UniversalRouter.sol": "UniversalRouter"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 1000000
+		},
+		"remappings": [
+			":@openzeppelin/=node_modules/@openzeppelin/",
+			":@uniswap/=node_modules/@uniswap/",
+			":ds-test/=lib/forge-std/lib/ds-test/src/",
+			":forge-gas-snapshot/=lib/permit2/lib/forge-gas-snapshot/src/",
+			":forge-std/=lib/forge-std/src/",
+			":openzeppelin-contracts/=lib/permit2/lib/openzeppelin-contracts/",
+			":permit2/=lib/permit2/",
+			":solmate/=lib/solmate/"
+		],
+		"viaIR": true
+	},
+	"sources": {
+		"contracts/UniversalRouter.sol": {
+			"keccak256": "0x68f689e704d1917d0c75aa5b2b75eb71b80879ec18673295e7f8fd498484048d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://db2b85c9c8e98b00acfe365ad498e6e7d6e5c2928191184e2b38728ab316e5fc",
+				"dweb:/ipfs/QmRwqBfTqnbNrNsn79QVo5BLXzMJjt6krCnaNDikwmBTr8"
+			]
+		},
+		"contracts/base/Dispatcher.sol": {
+			"keccak256": "0x0711c59ac85bd732849c97627d965a113c864458617235657bc971865890fe26",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://5697eeb7553db95f794b519ca697ff7c6a999a18f56c408f61ccaf335579d707",
+				"dweb:/ipfs/QmPCP7guzBoVa8ndwZ9Zya7XfEzEKuShpAEFnsHNmtAxTb"
+			]
+		},
+		"contracts/base/LockAndMsgSender.sol": {
+			"keccak256": "0x6f816683f08585270627953efeb3a30e59c1353b9012430975e992e7132a9446",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://e3b9cbd8e0757a046722fdb22c59727b974410943b51027b070e79640628efe4",
+				"dweb:/ipfs/QmXNTi5j5au1UQQzfWUqmejFPEsrxcmyS24dS8KJWzaJfX"
+			]
+		},
+		"contracts/base/RouterImmutables.sol": {
+			"keccak256": "0x4589c74a2dc26510fd08829600f05b5dfe66eee31e510d48d8de084ef91d1181",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c30c65e52c73ed8addbdddde3ce7a5949839ba9c2821b2db005e235334b388db",
+				"dweb:/ipfs/QmXYn2yRHcooDao7pMKNoT6ChPg3XLADxtC9ojHZT96uqV"
+			]
+		},
+		"contracts/interfaces/IUniversalRouter.sol": {
+			"keccak256": "0x4252c8bda3e2d57b1e7f8c4538f4595a954d8e36fe2dea160fdf6f9853c0798c",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://7c95edb7119e23c0ae86fca90a1847b606713da5d1159ed9a1bca24ee9b60f82",
+				"dweb:/ipfs/QmaVxX4HDDwkbSoCdYMEt61FJ2fA4xjNko2e4ce5b8gHQm"
+			]
+		},
+		"contracts/interfaces/external/IWETH9.sol": {
+			"keccak256": "0xb059e143d7d3864bfc53708d54bb2a35c9115d807de3ed75a6a033be24b33b6c",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://a5b7afc743e6fecbf23563b43482218a6bdd58e3cdd1ef3e36a9d07fd4ff4c26",
+				"dweb:/ipfs/QmTN8CozJtaS8GAgDUMmWnnfc6Er9HRU9X8RSQJx5oZmJT"
+			]
+		},
+		"contracts/libraries/Commands.sol": {
+			"keccak256": "0x598de260a2a139f3b398a5d58b4a7fdb9e09a5812817efa2611cc872c4f90583",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c573d5b791dd3e7afd13a07274c882681773ac9fdc9c4f1181e050edf926457c",
+				"dweb:/ipfs/Qma1Sy54fU6aiGmzn8ECMGYiYsc7NEcbWAy5Lbs3meTVgK"
+			]
+		},
+		"contracts/libraries/Constants.sol": {
+			"keccak256": "0x08ce0ce1d2d1491ae4350724ef0448a601db8a729c79748b00014500608bd897",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://b5db0b643832df35eef6ee56f3be72bd36bf29c8ced3603ea3e07d8939b4b4e0",
+				"dweb:/ipfs/QmdUkmDoQiEzt7pj29JpfT7dQJDWzBCn6bCc6ajLi46EFY"
+			]
+		},
+		"contracts/modules/Payments.sol": {
+			"keccak256": "0x285335ca1029455364741cd08ac3bc6d9565a0996ea4a167dfa6e49f7c7b05fa",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://f9b0f44bc95178800435a7ba55b739216dce8b422ea0c2fb5f1ae0f874c31fcb",
+				"dweb:/ipfs/QmYVYbeNDGh9ieC6wSYhHiiWvcwnzzB3ecq2ZYAjr9wbMh"
+			]
+		},
+		"contracts/modules/Permit2Payments.sol": {
+			"keccak256": "0x92e2adaa06456f7753608dd60435e13183e927d7a5aa47ed00bb2cf974e88697",
+			"urls": [
+				"bzz-raw://11cd58adc2e0f0a52c7bc02bc541ca6ef0b521f169a086d6638a1d2c9fa364bd",
+				"dweb:/ipfs/QmYXQc8HeE6gYVXVp8gmscy5ZS8SbTq3HfjeGRmsvpSW1W"
+			]
+		},
+		"contracts/modules/uniswap/v2/UniswapV2Library.sol": {
+			"keccak256": "0x58474fb5c405c6c1451ed34255a6b2e4c3f1fe7c9aa3fec6acf5c2ca31f45e56",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://dea1775dbf82e16d79ef8dd4b2c738435d9cd6460d1c77bf4e4ffe375cc28324",
+				"dweb:/ipfs/Qmeg9WRi5CnCBNYvmeait5ga7ykKQGtXxUCzG2dp3YTN6G"
+			]
+		},
+		"contracts/modules/uniswap/v2/V2SwapRouter.sol": {
+			"keccak256": "0xfc4cc4074f432dfefb2c5090d5b3d8aa59a5bb21f9348a3e2154ac106c34f472",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ff06a43786b0a6b49b6194a6535309de36f4b7f4008a34b108a11552308f46cc",
+				"dweb:/ipfs/QmcJuLUAiKwvea6UJQmpWS9pZCmDUN8AWBaPrLFN99mXKX"
+			]
+		},
+		"contracts/modules/uniswap/v3/BytesLib.sol": {
+			"keccak256": "0x279376a70c42f5720d23ceb28339d7f10dcce745a73173b9762a2803223ff448",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://80e2e21c8a428cee7b818a22343a99a03b5fcc3862ee5b5c95c428dab46bb27d",
+				"dweb:/ipfs/QmZrwRFg2ZJ6dqejyqYJyMtFS1cYuMYose1dhgRisBmK9s"
+			]
+		},
+		"contracts/modules/uniswap/v3/V3Path.sol": {
+			"keccak256": "0xf6abbf4c7cd0975ddabb0ddb641ea9ae3b0cc1dd9a1cabf5e7cc271a974eabc2",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://1e0987fc9b81c65eada64cb65f981680c2054e489a6049d397b5ecbbf4c9a0a9",
+				"dweb:/ipfs/QmW7mbbHsfc2GLy2GkCUv3VwXV93y6UFtKDD7E9QEtzFH7"
+			]
+		},
+		"contracts/modules/uniswap/v3/V3SwapRouter.sol": {
+			"keccak256": "0xbc0b220d89735e9a802fe47cd47cca3dd986f2e1301d5467acdfb2a7a24143f4",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://7c9ddfe0f15e2d2ab4b6c7eb238d8af28d4be297c0f49c48497ea6915a3c2e25",
+				"dweb:/ipfs/QmYZcJPxWdxA31FgLexwBaLAfufxqVvA3bZCe82GkEVTYS"
+			]
+		},
+		"lib/permit2/src/interfaces/IAllowanceTransfer.sol": {
+			"keccak256": "0x14cf8839107a3b30fbd02e92b1506d8ee25a002b6d1dd37ff2745b2adbaf4f2e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bb1a740ae82ee2f704135927e817780971356b41288e6b044c43ac9e3cb8e97d",
+				"dweb:/ipfs/Qmbi1ZZREFLnNyAfpvPpgRYYdxCTemqTr5krfX6ufVA7D2"
+			]
+		},
+		"lib/permit2/src/libraries/SafeCast160.sol": {
+			"keccak256": "0x8a34e2beac108d74f89510c949983212b5f09307a93ee9e17a9d50e93f6bc8e9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://828697f9567ce617c5c1c8f76b6bcd250e93aea2c4f3ee188be6dff8443c19e7",
+				"dweb:/ipfs/QmafxeSPhUc9gGtNDLAw26oZooC5XNLhDMxHxYhJxL5Nwi"
+			]
+		},
+		"lib/solmate/src/tokens/ERC20.sol": {
+			"keccak256": "0xcdfd8db76b2a3415620e4d18cc5545f3d50de792dbf2c3dd5adb40cbe6f94b10",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://57b3ab70cde374af1cf2c9888636e8de6cf660f087b1c9abd805e9271e19fa35",
+				"dweb:/ipfs/QmNrLDBAHYFjpjSd12jerm1AdBkDqEYUUaXgnT854BUZ97"
+			]
+		},
+		"lib/solmate/src/utils/SafeTransferLib.sol": {
+			"keccak256": "0xbadf3d708cf532b12f75f78a1d423135954b63774a6d4ba15914a551d348db8a",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://88ac8256bd520d1b8e6f9c4ac9e8777bffdc4a6c8afb1a848f596665779a55b4",
+				"dweb:/ipfs/QmXx7X1dxe6f5VM91vgQ5BA4r2eF97GWDcQDrgHytcvfjU"
+			]
+		},
+		"node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"node_modules/@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol": {
+			"keccak256": "0x7c9bc70e5996c763e02ff38905282bc24fb242b0ef2519a003b36824fc524a4b",
+			"urls": [
+				"bzz-raw://85d5ad2dd23ee127f40907a12865a1e8cb5828814f6f2480285e1827dd72dedf",
+				"dweb:/ipfs/QmayKQWJgWmr46DqWseADyUanmqxh662hPNdAkdHRjiQQH"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol": {
+			"keccak256": "0xfe6113d518466cd6652c85b111e01f33eb62157f49ae5ed7d5a3947a2044adb1",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1c42b9e6f5902ac38dd43e25750939baa7e0c1425dc75afd717c4412731065d5",
+				"dweb:/ipfs/QmWaoacnzsucTvBME2o7YgZBZMhaHv7fkj83htHMVWJKWh"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0x3f485fb1a44e8fbeadefb5da07d66edab3cfe809f0ac4074b1e54e3eb3c4cf69",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://095ce0626b41318c772b3ebf19d548282607f6a8f3d6c41c13edfbd5370c8652",
+				"dweb:/ipfs/QmVDZfJJ89UUCE1hMyzqpkZAtQ8jUsBgZNE5AMRG7RzRFS"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol": {
+			"keccak256": "0x9453dd0e7442188667d01d9b65de3f1e14e9511ff3e303179a15f6fc267f7634",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://982f4328f956c3e60e67501e759eb292ac487f76460c774c50e9ae4fcc92aae5",
+				"dweb:/ipfs/QmRnzEDsaqtd9PJEVcgQi7p5aV5pMSvRUoGZJAdwFUJxgZ"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
+			"keccak256": "0xe603ac5b17ecdee73ba2b27efdf386c257a19c14206e87eee77e2017b742d9e5",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://8febc9bdb399a4d94bb89f5377732652e2400e4a8dee808201ade6848f9004e7",
+				"dweb:/ipfs/QmaKDqYYFU4d2W2iN77aDHptfbFmYZRrMYXHeGpJmM8C1c"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol": {
+			"keccak256": "0x8071514d0fe5d17d6fbd31c191cdfb703031c24e0ece3621d88ab10e871375cd",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://d0b571930cc7488b1d546a7e9cea7c52d8b3c4e207da657ed0e0db7343b8cd03",
+				"dweb:/ipfs/QmaGK6vVwB95QSTR1XMYvrh7ivYAYZxi3fD7v6VMA4jZ39"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol": {
+			"keccak256": "0xf6e5d2cd1139c4c276bdbc8e1d2b256e456c866a91f1b868da265c6d2685c3f7",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://b99c8c9ae8e27ee6559e5866bea82cbc9ffc8247f8d15b7422a4deb287d4d047",
+				"dweb:/ipfs/QmfL8gaqt3ffAnm6nVj5ksuNpLygXuL3xq5VBqrkwC2JJ3"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
+			"keccak256": "0x759b78a2918af9e99e246dc3af084f654e48ef32bb4e4cb8a966aa3dcaece235",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://64144fb96e1c7fdba87305acadb98a198d26a3d46c097cb3a666e567f6f29735",
+				"dweb:/ipfs/QmUnWVwN9FKB9uV5Pr8YfLpWZnYM2DENnRMaadZ492JS9u"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol": {
+			"keccak256": "0x852dc1f5df7dcf7f11e7bb3eed79f0cea72ad4b25f6a9d2c35aafb48925fd49f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://ed63907c38ff36b0e22bc9ffc53e791ea74f0d4f0e7c257fdfb5aaf8825b1f0f",
+				"dweb:/ipfs/QmSQrckghEjs6HVsA5GVgpNpZWvTXMY5eQLF7cN6deFeEg"
+			]
+		},
+		"node_modules/@uniswap/v3-core/contracts/libraries/SafeCast.sol": {
+			"keccak256": "0x4c12bf820c0b011f5490a209960ca34dd8af34660ef9e01de0438393d15e3fd8",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://fed11489e218e55d087d42b4f350a30e10cd2aedec8f432bd3cc712f648d5869",
+				"dweb:/ipfs/QmWfRnRxyXwHUDcTQPazxYYk5jxErGeQqdvnYtyg5nBPbU"
+			]
+		}
+	},
+	"version": 1
+}
