@@ -132,7 +132,7 @@ abstract contract Dispatcher is Payments, V2SwapRouter, V3SwapRouter, LockAndMsg
                             amountOutMin := calldataload(add(inputs.offset, 0x40))
                             payerIsUser := calldataload(add(inputs.offset, 0x80))
                         }
-                        address[] calldata path = abi.decode(inputs.toBytes(3), (address[]));
+                        address[] memory path = abi.decode(inputs.toBytes(3), (address[]));
                         address payer = payerIsUser ? lockedBy : address(this);
                         v2SwapExactInput(map(recipient), amountIn, amountOutMin, path, payer);
                     } else if (command == Commands.V2_SWAP_EXACT_OUT) {
@@ -147,7 +147,7 @@ abstract contract Dispatcher is Payments, V2SwapRouter, V3SwapRouter, LockAndMsg
                             amountInMax := calldataload(add(inputs.offset, 0x40))
                             payerIsUser := calldataload(add(inputs.offset, 0x80))
                         }
-                        address[] calldata path = abi.decode(inputs.toBytes(3), (address[]));
+                        address[] memory path = abi.decode(inputs.toBytes(3), (address[]));
                         address payer = payerIsUser ? lockedBy : address(this);
                         v2SwapExactOutput(map(recipient), amountOut, amountInMax, path, payer);
                     } else if (command == Commands.PERMIT2_PERMIT) {
@@ -214,4 +214,3 @@ abstract contract Dispatcher is Payments, V2SwapRouter, V3SwapRouter, LockAndMsg
     /// @param inputs An array of byte strings containing abi encoded inputs for each command
     function execute(bytes calldata commands, bytes[] calldata inputs) external payable virtual;
 }
-
