@@ -1,0 +1,54 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/modules/uniswap/v2/V2SwapRouter.sol": {
+      "content": "pragma solidity ^0.8.17; contracts/modules/uniswap/v2/V2SwapRouter.sol"
+    },
+    "contracts/modules/Permit2Payments.sol": {
+      "content": "pragma solidity ^0.8.17; contracts/modules/Permit2Payments.sol"
+    },
+    "contracts/modules/Payments.sol": {
+      "content": "pragma solidity ^0.8.17; contracts/modules/Payments.sol"
+    },
+    "contracts/base/RouterImmutables.sol": {
+      "content": "pragma solidity ^0.8.17; contracts/base/RouterImmutables.sol"
+    },
+    "contracts/libraries/Constants.sol": {
+      "content": "pragma solidity ^0.8.17; contracts/libraries/Constants.sol"
+    }
+  },
+  "settings": {
+    "remappings": [
+      "@openzeppelin/=node_modules/@openzeppelin/",
+      "@uniswap/=node_modules/@uniswap/",
+      "ds-test/=lib/forge-std/lib/ds-test/src/",
+      "forge-gas-snapshot/=lib/permit2/lib/forge-gas-snapshot/src/",
+      "forge-std/=lib/forge-std/src/",
+      "openzeppelin-contracts/=lib/permit2/lib/openzeppelin-contracts/",
+      "permit2/=lib/permit2/",
+      "solmate/=lib/solmate/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000000
+    },
+    "viaIR": true,
+    "evmVersion": "london",
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "devdoc",
+          "userdoc",
+          "metadata"
+        ]
+      }
+    },
+    "libraries": {}
+  }
+}
